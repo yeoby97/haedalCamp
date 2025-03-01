@@ -36,9 +36,13 @@ public class LoginActivity extends AppCompatActivity {
 
             currentUser.email = email;
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            //다른 액티비티로 데이터를 전달할 때, putExtra()를 사용하여 값을 추가한다.
+            //"Email", "Password"는 데이터를 가져올 때 사용될 키 값
+            intent.putExtra("email",email);
+            intent.putExtra("password",password);
+
             startActivity(intent);
             finish();
-
         });
     }
 }
